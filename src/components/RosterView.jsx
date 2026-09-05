@@ -36,9 +36,9 @@ export function RosterView({ classroom, onAddStudent, onRenameStudent, onDeleteS
           onChange={(e) => setNewName(e.target.value)}
           placeholder="Add a student's name"
           aria-label="Add a student's name"
-          className="flex-1 px-3 py-2 border border-stone-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="flex-1 px-3 py-2 border border-stone-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
         />
-        <button type="submit" className="flex items-center gap-1 bg-teal-700 hover:bg-teal-800 text-white text-sm font-medium px-4 py-2 rounded-lg shrink-0">
+        <button type="submit" className="flex items-center gap-1 bg-brand-700 hover:bg-brand-800 text-white text-sm font-medium px-4 py-2 rounded-lg shrink-0">
           <Plus size={16} /> Add
         </button>
       </form>
@@ -66,10 +66,10 @@ export function RosterView({ classroom, onAddStudent, onRenameStudent, onDeleteS
                     if (e.key === 'Enter') saveEdit();
                     if (e.key === 'Escape') setEditingId(null);
                   }}
-                  className="flex-1 px-2 py-1 border border-teal-400 rounded text-sm focus:outline-none"
+                  className="flex-1 px-2 py-1 border border-brand-400 rounded text-sm focus:outline-none"
                 />
               ) : (
-                <button onClick={() => startEdit(s)} className="flex-1 text-left text-sm text-stone-800 hover:text-teal-700">
+                <button onClick={() => startEdit(s)} className="flex-1 text-left text-sm text-stone-800 hover:text-brand-700">
                   {s.name}
                 </button>
               )}

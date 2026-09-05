@@ -83,7 +83,7 @@ export function ClassReportView({ classroom }) {
         <div className="flex rounded-lg border border-stone-300 overflow-hidden">
           <button
             onClick={() => setMode('overview')}
-            className={'px-3 py-1.5 text-sm font-medium ' + (mode === 'overview' ? 'bg-teal-700 text-white' : 'bg-white text-stone-600 hover:bg-stone-100')}
+            className={'px-3 py-1.5 text-sm font-medium ' + (mode === 'overview' ? 'bg-brand-700 text-white' : 'bg-white text-stone-600 hover:bg-stone-100')}
           >
             Overview
           </button>
@@ -91,7 +91,7 @@ export function ClassReportView({ classroom }) {
             onClick={() => setMode('byLetter')}
             className={
               'px-3 py-1.5 text-sm font-medium border-l border-stone-300 ' +
-              (mode === 'byLetter' ? 'bg-teal-700 text-white' : 'bg-white text-stone-600 hover:bg-stone-100')
+              (mode === 'byLetter' ? 'bg-brand-700 text-white' : 'bg-white text-stone-600 hover:bg-stone-100')
             }
           >
             By Letter
@@ -100,7 +100,7 @@ export function ClassReportView({ classroom }) {
             onClick={() => setMode('growth')}
             className={
               'px-3 py-1.5 text-sm font-medium border-l border-stone-300 ' +
-              (mode === 'growth' ? 'bg-teal-700 text-white' : 'bg-white text-stone-600 hover:bg-stone-100')
+              (mode === 'growth' ? 'bg-brand-700 text-white' : 'bg-white text-stone-600 hover:bg-stone-100')
             }
           >
             Growth
@@ -131,7 +131,7 @@ export function ClassReportView({ classroom }) {
           <button onClick={exportHandler} className="flex items-center gap-1 text-sm px-3 py-1.5 border border-stone-300 rounded-lg text-stone-600 hover:bg-stone-100">
             <Download size={14} /> Export view
           </button>
-          <button onClick={exportAll} className="flex items-center gap-1 text-sm px-3 py-1.5 border border-teal-700 text-teal-700 rounded-lg hover:bg-teal-50">
+          <button onClick={exportAll} className="flex items-center gap-1 text-sm px-3 py-1.5 border border-brand-700 text-brand-700 rounded-lg hover:bg-brand-50">
             <Download size={14} /> Export all data
           </button>
         </div>

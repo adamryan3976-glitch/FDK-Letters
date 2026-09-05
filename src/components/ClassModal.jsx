@@ -34,7 +34,7 @@ export function ClassModal({ show, onClose, classIndex, activeClassId, onCreateC
                 key={c.id}
                 className={
                   'flex items-center justify-between gap-2 px-3 py-2 rounded-lg border ' +
-                  (c.id === activeClassId ? 'border-teal-600 bg-teal-50' : 'border-stone-200')
+                  (c.id === activeClassId ? 'border-brand-600 bg-brand-50' : 'border-stone-200')
                 }
               >
                 <button
@@ -80,7 +80,7 @@ export function ClassModal({ show, onClose, classIndex, activeClassId, onCreateC
             onChange={(e) => setTeacherName(e.target.value)}
             placeholder="Teacher name"
             aria-label="Teacher name"
-            className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
           />
           <input
             type="text"
@@ -88,9 +88,9 @@ export function ClassModal({ show, onClose, classIndex, activeClassId, onCreateC
             onChange={(e) => setClassName(e.target.value)}
             placeholder="Class name (e.g., Room 12)"
             aria-label="Class name"
-            className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
           />
-          <button type="submit" className="w-full bg-teal-700 hover:bg-teal-800 text-white text-sm font-medium py-2 rounded-lg">
+          <button type="submit" className="w-full bg-brand-700 hover:bg-brand-800 text-white text-sm font-medium py-2 rounded-lg">
             Create class
           </button>
         </form>

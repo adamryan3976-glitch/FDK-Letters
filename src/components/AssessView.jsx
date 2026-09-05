@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Plus, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { CATEGORIES, TOTAL_LETTERS_PER_STUDENT } from '../constants.js';
 import { sortedPeriods, sortedStudents, studentTotalRated } from '../utils.js';
-import { LetterGrid } from './shared.jsx';
+import { LetterGrid, RatingLegend } from './shared.jsx';
 
 export function AssessView({
   classroom,
@@ -55,7 +55,7 @@ export function AssessView({
             onClick={() => setSelectedPeriodId(p.id)}
             className={
               'px-3 py-1.5 text-sm font-medium rounded-full border ' +
-              (p.id === period.id ? 'bg-teal-700 text-white border-teal-700' : 'bg-white text-stone-600 border-stone-300 hover:bg-stone-100')
+              (p.id === period.id ? 'bg-brand-700 text-white border-brand-700' : 'bg-white text-stone-600 border-stone-300 hover:bg-stone-100')
             }
           >
             {p.label}
@@ -78,7 +78,7 @@ export function AssessView({
             onChange={(e) => setPeriodLabel(e.target.value)}
             placeholder="Label (e.g., November Check-In)"
             aria-label="Assessment label"
-            className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
           />
           <div className="flex flex-col sm:flex-row gap-2">
             <input
@@ -86,13 +86,13 @@ export function AssessView({
               value={periodDate}
               onChange={(e) => setPeriodDate(e.target.value)}
               aria-label="Assessment date"
-              className="flex-1 px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="flex-1 px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
             <select
               value={insertAfter}
               onChange={(e) => setInsertAfter(e.target.value)}
               aria-label="Insert position"
-              className="flex-1 px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="flex-1 px-3 py-2 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               {periods.map((p) => (
                 <option key={p.id} value={p.id}>
@@ -102,7 +102,7 @@ export function AssessView({
             </select>
           </div>
           <div className="flex gap-2">
-            <button type="submit" className="bg-teal-700 hover:bg-teal-800 text-white text-sm font-medium px-4 py-2 rounded-lg">
+            <button type="submit" className="bg-brand-700 hover:bg-brand-800 text-white text-sm font-medium px-4 py-2 rounded-lg">
               Add
             </button>
             <button type="button" onClick={() => setShowAddPeriod(false)} className="text-stone-500 text-sm px-4 py-2">
@@ -141,7 +141,7 @@ export function AssessView({
                         {rated}/{TOTAL_LETTERS_PER_STUDENT}
                       </span>
                       <span className="w-16 h-1.5 bg-stone-200 rounded-full overflow-hidden inline-block">
-                        <span className="h-full bg-teal-600 block" style={{ width: `${(rated / TOTAL_LETTERS_PER_STUDENT) * 100}%` }} />
+                        <span className="h-full bg-brand-600 block" style={{ width: `${(rated / TOTAL_LETTERS_PER_STUDENT) * 100}%` }} />
                       </span>
                     </span>
                   </button>
@@ -153,7 +153,7 @@ export function AssessView({
       ) : (
         <div>
           <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <button onClick={() => setAssessStudentId(null)} className="flex items-center gap-1 text-sm text-teal-700 hover:underline">
+            <button onClick={() => setAssessStudentId(null)} className="flex items-center gap-1 text-sm text-brand-700 hover:underline">
               <ChevronLeft size={16} /> All students
             </button>
             <div className="flex items-center gap-2">
@@ -176,6 +176,7 @@ export function AssessView({
               </button>
             </div>
           </div>
+          <RatingLegend />
           <div className="space-y-3">
             {CATEGORIES.map((c) => (
               <LetterGrid key={c.key} category={c} classroom={classroom} studentId={student.id} periodId={period.id} onSetLetter={onSetLetter} />

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Download } from 'lucide-react';
 import { CATEGORIES } from '../constants.js';
 import { sortedPeriods, sortedStudents, getLetterRating, categorySummary, weightedScore, toCSV, downloadCSV } from '../utils.js';
-import { SummaryCell, LetterGridStatic } from './shared.jsx';
+import { SummaryCell, LetterGridStatic, RatingLegend } from './shared.jsx';
 
 export function StudentReportView({ classroom, selectedStudentId, setSelectedStudentId }) {
   const students = sortedStudents(classroom);
@@ -60,7 +60,7 @@ export function StudentReportView({ classroom, selectedStudentId, setSelectedStu
             </option>
           ))}
         </select>
-        <button onClick={exportStudent} className="ml-auto flex items-center gap-1 text-sm px-3 py-1.5 border border-teal-700 text-teal-700 rounded-lg hover:bg-teal-50">
+        <button onClick={exportStudent} className="ml-auto flex items-center gap-1 text-sm px-3 py-1.5 border border-brand-700 text-brand-700 rounded-lg hover:bg-brand-50">
           <Download size={14} /> Export
         </button>
       </div>
@@ -121,6 +121,7 @@ export function StudentReportView({ classroom, selectedStudentId, setSelectedStu
           ))}
         </select>
       </div>
+      <RatingLegend />
       <div className="space-y-3">
         {detailPeriod &&
           CATEGORIES.map((c) => <LetterGridStatic key={c.key} category={c} classroom={classroom} studentId={student.id} periodId={detailPeriod.id} />)}

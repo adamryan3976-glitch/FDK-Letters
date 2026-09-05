@@ -23,6 +23,25 @@ export function SummaryCell({ counts }) {
   );
 }
 
+export function RatingLegend() {
+  return (
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-stone-600 mb-3">
+      <span className="flex items-center gap-1.5">
+        <span className="w-3 h-3 rounded-sm bg-emerald-600 inline-block" /> Mastered
+      </span>
+      <span className="flex items-center gap-1.5">
+        <span className="w-3 h-3 rounded-sm bg-amber-500 inline-block" /> Developing
+      </span>
+      <span className="flex items-center gap-1.5">
+        <span className="w-3 h-3 rounded-sm bg-rose-500 inline-block" /> Not Yet
+      </span>
+      <span className="flex items-center gap-1.5">
+        <span className="w-3 h-3 rounded-sm bg-white border border-stone-300 inline-block" /> Not assessed
+      </span>
+    </div>
+  );
+}
+
 export function Badge({ value }) {
   if (!value) {
     return <span className="inline-block text-xs text-stone-300 border border-dashed border-stone-300 rounded-full px-2 py-0.5">&mdash;</span>;

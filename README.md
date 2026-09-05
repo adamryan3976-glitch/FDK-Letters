@@ -135,6 +135,52 @@ with their own Google account and gets their own private class data.
 
 ---
 
+## Using a custom domain
+
+This project is already configured to serve from a custom domain (there's a
+`public/CNAME` file with the domain baked in, and `vite.config.js` builds
+assets as root-relative rather than under a `/repo-name/` subpath). If your
+domain is different from what's already in `public/CNAME`, edit that file
+first, commit, and push.
+
+### 1. Point your DNS at GitHub
+
+At wherever your domain's DNS is managed (your registrar, or your school's
+DNS provider), add a **CNAME record**:
+
+| Type  | Name / Host                          | Value / Target                    |
+|-------|---------------------------------------|------------------------------------|
+| CNAME | `fdk-letters` (just the subdomain part) | `<your-username>.github.io`      |
+
+DNS changes can take anywhere from a few minutes to a few hours to take
+effect.
+
+### 2. Add the domain in GitHub
+
+In your repo: **Settings → Pages → Custom domain**, enter the full domain
+(e.g. `fdk-letters.winchesterps.ca`) and save. GitHub will check the DNS
+record and, once it verifies, offer to **Enforce HTTPS** -- turn that on once
+it's available (it may take a little while to appear after the domain first
+verifies, since GitHub has to issue a certificate).
+
+### 3. Authorize the new domain in Firebase
+
+Back in **Authentication → Settings → Authorized domains** in the Firebase
+console, click **Add domain** and add your custom domain (e.g.
+`fdk-letters.winchesterps.ca`). Google sign-in will fail on the new domain
+until this is done, even if DNS and GitHub Pages are both working correctly.
+
+### A note on timing
+
+Between pushing the change that added the `CNAME` file and finishing steps 1-3
+above, the old `<username>.github.io/<repo>` URL may temporarily look broken
+(blank page or missing styles). That's expected -- the app now assumes it's
+being served from the root of a domain, not from a `/repo-name/` subfolder.
+Once your custom domain is verified and authorized in Firebase, everything
+resolves and that becomes the one link you share with teachers.
+
+---
+
 ## Optional: restrict sign-in to your school
 
 By default, *any* Google account can sign in and create a class (each

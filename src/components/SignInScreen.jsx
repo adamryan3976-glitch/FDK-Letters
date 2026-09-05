@@ -1,13 +1,9 @@
-import { School } from 'lucide-react';
-
 export default function SignInScreen({ onSignIn, error }) {
   return (
     <div className="min-h-screen bg-stone-50 flex items-center justify-center px-4">
       <div className="max-w-sm w-full text-center">
-        <div className="w-14 h-14 bg-teal-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <School size={28} className="text-white" />
-        </div>
-        <h1 className="text-xl font-bold text-stone-800 mb-1">Letter Progress Tracker</h1>
+        <img src="/icon-192.png" alt="FDK Alphabet Tracker" className="w-20 h-20 rounded-2xl mx-auto mb-4 shadow-sm" />
+        <h1 className="text-xl font-bold text-stone-800 mb-1">FDK Alphabet Tracker</h1>
         <p className="text-sm text-stone-500 mb-6">Sign in with your Google account to see your class.</p>
 
         <button

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { School } from 'lucide-react';
 import { Header, NavTabs } from './Header.jsx';
 import { ClassModal } from './ClassModal.jsx';
 import { RosterView } from './RosterView.jsx';
@@ -232,9 +231,9 @@ export function ClassroomApp({ user, onSignOut }) {
         </>
       ) : (
         <div className="max-w-5xl mx-auto px-4 py-16 text-center">
-          <School size={40} className="mx-auto mb-3 text-stone-300" />
+          <img src="/icon-192.png" alt="" className="w-16 h-16 rounded-2xl mx-auto mb-4 opacity-80" />
           <p className="text-stone-500 mb-4">Create a class to get started.</p>
-          <button onClick={() => setShowClassModal(true)} className="bg-teal-700 hover:bg-teal-800 text-white text-sm font-medium px-4 py-2 rounded-lg">
+          <button onClick={() => setShowClassModal(true)} className="bg-brand-700 hover:bg-brand-800 text-white text-sm font-medium px-4 py-2 rounded-lg">
             Create a class
           </button>
         </div>
