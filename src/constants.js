@@ -2,15 +2,19 @@ import { Users, ClipboardList, BarChart3, User } from 'lucide-react';
 
 export const UPPER_LETTERS = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)); // A-Z
 export const LOWER_LETTERS = Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i)); // a-z
+export const COUNTING_CHECKPOINTS = Array.from({ length: 10 }, (_, i) => String((i + 1) * 10)); // 10, 20, ... 100
 
 export const CATEGORIES = [
   { key: 'namingUpper', label: 'Naming Uppercase', letters: UPPER_LETTERS },
   { key: 'namingLower', label: 'Naming Lowercase', letters: LOWER_LETTERS },
   { key: 'soundsUpper', label: 'Sounds Uppercase', letters: UPPER_LETTERS },
   { key: 'soundsLower', label: 'Sounds Lowercase', letters: LOWER_LETTERS },
+  { key: 'writingUpper', label: 'Writing Uppercase', letters: UPPER_LETTERS },
+  { key: 'writingLower', label: 'Writing Lowercase', letters: LOWER_LETTERS },
+  { key: 'counting', label: 'Counting to 100', letters: COUNTING_CHECKPOINTS },
 ];
 
-export const TOTAL_LETTERS_PER_STUDENT = CATEGORIES.reduce((sum, c) => sum + c.letters.length, 0); // 104
+export const TOTAL_LETTERS_PER_STUDENT = CATEGORIES.reduce((sum, c) => sum + c.letters.length, 0); // 166
 
 export const RATINGS = ['M', 'D', 'NY'];
 export const CYCLE = [null, 'M', 'D', 'NY'];
